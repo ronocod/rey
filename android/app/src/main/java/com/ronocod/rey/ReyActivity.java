@@ -16,7 +16,6 @@ import go.rey.Rey;
 import go.rey.State;
 import go.rey.Store;
 import go.rey.Subscriber;
-import io.intercom.android.sdk.Intercom;
 
 public class ReyActivity extends AppCompatActivity implements Subscriber {
 
@@ -28,8 +27,6 @@ public class ReyActivity extends AppCompatActivity implements Subscriber {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Intercom.client().registerUnidentifiedUser();
 
         store = Rey.newStore();
 
@@ -62,10 +59,6 @@ public class ReyActivity extends AppCompatActivity implements Subscriber {
 
     @Override public void update() {
         final State state = store.getState();
-        HashMap<String, Object> attributes = new HashMap<>();
-        attributes.put("has_requested", true);
-        Intercom.client().updateUser(attributes);
-        Intercom.client().logEvent("request");
 
         final Person person = state.getCurrentPerson();
         final String text = person == null
