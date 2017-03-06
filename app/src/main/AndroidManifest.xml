@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.ronocod.gotos"
+<manifest package="com.ronocod.rey"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- NOTE: no network permission was requested -->
-    <application
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application android:name=".ReyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.ronocod.gotos.TodoListActivity"
-            android:label="@string/title_todo_list"
+            android:name="com.ronocod.rey.ReyActivity"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

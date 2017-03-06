@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
-        applicationId "com.ronocod.gotos"
+        applicationId "com.ronocod.rey"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
@@ -25,9 +25,10 @@ configurations.all {
 }
 
 dependencies {
-    compile('com.ronocod:teanga-core:local_snapshot') { changing = true }
+    compile('com.ronocod:rey:local_snapshot') { changing = true }
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
+    compile 'io.intercom.android:intercom-sdk-base:3.+'
 }
