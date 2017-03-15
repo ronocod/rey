@@ -4,17 +4,6 @@ import (
 	"github.com/leejarvis/swapi"
 )
 
-const (
-	ActionFetchStarted = iota
-	ActionFetchSuccess = iota
-	ActionFetchFailed  = iota
-)
-
-type Action struct {
-	Type  int32
-	Value interface{}
-}
-
 type Person struct {
 	Name      string   `json:"name"`
 	Height    string   `json:"height"`
@@ -34,62 +23,49 @@ type Person struct {
 	URL       string   `json:"url"`
 }
 
-type State struct {
-	CurrentPerson *Person
-	CurrentIndex  int
-	IsFetching    bool
-}
-
-type Subscriber interface {
-	Update()
-}
-
-type Store struct {
-	State      *State
-	Subscriber Subscriber
-}
-
-func (store *Store) FetchNextPerson() {
-	store.State = &State{
-		CurrentIndex:  store.State.CurrentIndex + 1,
-		CurrentPerson: store.State.CurrentPerson,
-		IsFetching:    true,
-	}
-	store.Subscriber.Update()
-	person, err := swapi.GetPerson(store.State.CurrentIndex)
-	if err == nil {
-		store.State = &State{
-			CurrentIndex:  store.State.CurrentIndex,
-			CurrentPerson: ToReyPerson(person),
+func reduce(action *Action, state *State) *State {
+	switch action.actionType {
+	case ActionFetchPersonRequest:
+		return &State{
+			CurrentIndex:  state.CurrentIndex + 1,
+			CurrentPerson: state.CurrentPerson,
+			IsFetching:    true,
+		}
+	case ActionFetchPersonSuccess:
+		return &State{
+			CurrentIndex:  state.CurrentIndex,
+			CurrentPerson: ToReyPerson(action.value.(swapi.Person)),
 			IsFetching:    false,
 		}
-		store.Subscriber.Update()
-	} else {
-		println(err)
+	case ActionFetchPersonFailed:
+		return &State{
+			CurrentIndex:  state.CurrentIndex,
+			CurrentPerson: state.CurrentPerson,
+			IsFetching:    false,
+		}
+	default:
+		return state
 	}
 }
 
-func (store *Store) Dispatch(action *Action) {
-	switch action.Type {
-	case ActionFetchFailed:
-		bre
+func NewStore() *Store {
+	return &Store{
+		state:   &State{CurrentIndex: 0, IsFetching: false},
+		reducer: reduce,
 	}
-	store.State = &State{
-		CurrentIndex:  store.State.CurrentIndex + 1,
-		CurrentPerson: store.State.CurrentPerson,
-		IsFetching:    true,
-	}
-	store.Subscriber.Update()
-	person, err := swapi.GetPerson(store.State.CurrentIndex)
+}
+
+func FetchNextPerson(store *Store) {
+	go fetchPerson(store.state.CurrentIndex, store)
+}
+
+func fetchPerson(index int, store *Store) {
+	store.Dispatch(FetchNextPersonRequestAction())
+	person, err := swapi.GetPerson(store.state.CurrentIndex)
 	if err == nil {
-		store.State = &State{
-			CurrentIndex:  store.State.CurrentIndex,
-			CurrentPerson: ToReyPerson(person),
-			IsFetching:    false,
-		}
-		store.Subscriber.Update()
+		store.Dispatch(FetchNextPersonSuccessAction(person))
 	} else {
-		println(err)
+		store.Dispatch(FetchNextPersonFailedAction())
 	}
 }
 
@@ -112,9 +88,4 @@ func ToReyPerson(person swapi.Person) *Person {
 		Edited:    person.Edited,
 		URL:       person.URL,
 	}
-}
-
-func NewStore() *Store {
-	state := &State{CurrentIndex: 0, IsFetching: false}
-	return &Store{State: state}
 }

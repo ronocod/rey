@@ -1,6 +1,5 @@
 package com.ronocod.rey;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -9,13 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.HashMap;
-
-import go.rey.Person;
-import go.rey.Rey;
-import go.rey.State;
-import go.rey.Store;
-import go.rey.Subscriber;
+import com.ronocod.rey.core.Core;
+import com.ronocod.rey.core.Person;
+import com.ronocod.rey.core.State;
+import com.ronocod.rey.core.Store;
+import com.ronocod.rey.core.Subscriber;
 
 public class ReyActivity extends AppCompatActivity implements Subscriber {
 
@@ -28,7 +25,7 @@ public class ReyActivity extends AppCompatActivity implements Subscriber {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        store = Rey.newStore();
+        store = Core.newStore();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -38,29 +35,24 @@ public class ReyActivity extends AppCompatActivity implements Subscriber {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fetchNext();
+                Core.fetchNextPerson(store);
             }
         });
 
-        store.setSubscriber(this);
         textView = (TextView) findViewById(R.id.item_text);
-        refreshLayout = ((SwipeRefreshLayout) findViewById(R.id.refreshLayout));
+        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.refreshLayout);
 
-        fetchNext();
+        store.subscribe(this);
+        Core.fetchNextPerson(store);
     }
 
-    private void fetchNext() {
-        AsyncTask.execute(new Runnable() {
-            @Override public void run() {
-                store.fetchNextPerson();
-            }
-        });
+    @Override protected void onDestroy() {
+        store.unsubscribe(this);
+        super.onDestroy();
     }
 
-    @Override public void update() {
-        final State state = store.getState();
-
-        final Person person = state.getCurrentPerson();
+    @Override public void update(State state) {
+        Person person = state.getCurrentPerson();
         final String text = person == null
                 ? "No-one loaded yet"
                 : person.toString()
