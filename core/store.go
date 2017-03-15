@@ -42,14 +42,9 @@ func (store *Store) Dispatch(action *Action) {
 		store.lock.RUnlock()
 		panic("reducer not initialized")
 	}
-	log.Printf("Dispatching action %d", action.actionType)
-
 	store.state = store.reducer(action, store.state)
-
-	log.Printf("New state %v", store.state)
+	log.Printf("Dispatched action %d -> %v", action.actionType, store.state)
 	for _, subscriber := range store.subscribers {
-
-		log.Printf("updating subscriber %v", subscriber)
 		subscriber.Update(store.state)
 	}
 	store.lock.RUnlock()
@@ -58,6 +53,7 @@ func (store *Store) Dispatch(action *Action) {
 func (store *Store) Subscribe(subscriber Subscriber) {
 	store.lock.RLock()
 	store.subscribers = append(store.subscribers, subscriber)
+	log.Printf("Subscribed %v, %d subscribers now", subscriber, len(store.subscribers))
 	subscriber.Update(store.state)
 	store.lock.RUnlock()
 }
@@ -70,6 +66,7 @@ func (store *Store) Unsubscribe(subscriber Subscriber) {
 			store.subscribers = append(store.subscribers, existing)
 		}
 	}
+	log.Printf("Unsubscribed %v, %d subscribers now", subscriber, len(store.subscribers))
 	store.lock.RUnlock()
 }
 
