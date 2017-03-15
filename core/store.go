@@ -30,8 +30,10 @@ type Subscriber interface {
 	Update(*State)
 }
 
+type ActionType int
+
 type Action struct {
-	actionType int64
+	actionType ActionType
 	value      interface{}
 }
 
@@ -43,7 +45,7 @@ func (store *Store) Dispatch(action *Action) {
 		panic("reducer not initialized")
 	}
 	store.state = store.reducer(action, store.state)
-	log.Printf("Dispatched action %d -> %v", action.actionType, store.state)
+	log.Printf("Dispatched action %v -> %v", action.actionType, store.state)
 	for _, subscriber := range store.subscribers {
 		subscriber.Update(store.state)
 	}

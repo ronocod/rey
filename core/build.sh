@@ -9,6 +9,8 @@ trap "kill $!" EXIT
 
 WORKING_DIR="../$(basename $(pwd))"
 
+stringer -type=ActionType || echo "Please run 'go get golang.org/x/tools/cmd/stringer'"
+
 echo "\nRunning tests ✅"
 go test || exit 1
 

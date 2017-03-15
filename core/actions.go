@@ -5,27 +5,27 @@ import (
 )
 
 const (
-	ActionFetchPersonRequest = iota
-	ActionFetchPersonSuccess = iota
-	ActionFetchPersonFailed  = iota
+	FetchPersonRequest ActionType = iota
+	FetchPersonSuccess
+	FetchPersonFailed
 )
 
-func newAction(actionType int64) *Action {
+func newAction(actionType ActionType) *Action {
 	return &Action{actionType: actionType}
 }
 
 func FetchNextPersonRequestAction() *Action {
-	return newAction(ActionFetchPersonRequest)
+	return newAction(FetchPersonRequest)
 }
 
 func FetchNextPersonSuccessAction(person swapi.Person) *Action {
-	return newActionWithValue(ActionFetchPersonSuccess, person)
+	return newActionWithValue(FetchPersonSuccess, person)
 }
 
 func FetchNextPersonFailedAction() *Action {
-	return newAction(ActionFetchPersonFailed)
+	return newAction(FetchPersonFailed)
 }
 
-func newActionWithValue(actionType int64, value interface{}) *Action {
+func newActionWithValue(actionType ActionType, value interface{}) *Action {
 	return &Action{actionType: actionType, value: value}
 }

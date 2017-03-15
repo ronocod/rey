@@ -25,19 +25,19 @@ type Person struct {
 
 func reduce(action *Action, state *State) *State {
 	switch action.actionType {
-	case ActionFetchPersonRequest:
+	case FetchPersonRequest:
 		return &State{
 			CurrentIndex:  state.CurrentIndex + 1,
 			CurrentPerson: state.CurrentPerson,
 			IsFetching:    true,
 		}
-	case ActionFetchPersonSuccess:
+	case FetchPersonSuccess:
 		return &State{
 			CurrentIndex:  state.CurrentIndex,
 			CurrentPerson: ToReyPerson(action.value.(swapi.Person)),
 			IsFetching:    false,
 		}
-	case ActionFetchPersonFailed:
+	case FetchPersonFailed:
 		return &State{
 			CurrentIndex:  state.CurrentIndex,
 			CurrentPerson: state.CurrentPerson,
