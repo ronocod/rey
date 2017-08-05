@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DF511222DC42120C2AC3B30 /* Pods_Rey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B72D7E390FA8076F7BA09FC /* Pods_Rey.framework */; };
+		E17BF4201F35F14600EDB91E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BF41F1F35F14600EDB91E /* AppDelegate.swift */; };
+		E17BF4221F35F14600EDB91E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BF4211F35F14600EDB91E /* ViewController.swift */; };
+		E17BF4251F35F14600EDB91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17BF4231F35F14600EDB91E /* Main.storyboard */; };
+		E17BF4271F35F14600EDB91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17BF4261F35F14600EDB91E /* Assets.xcassets */; };
+		E17BF42A1F35F14600EDB91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17BF4281F35F14600EDB91E /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A698FD91B04230C66E20E52 /* Pods-Rey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rey/Pods-Rey.release.xcconfig"; sourceTree = "<group>"; };
+		2B72D7E390FA8076F7BA09FC /* Pods_Rey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B863D81D480159122A58162C /* Pods-Rey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rey/Pods-Rey.debug.xcconfig"; sourceTree = "<group>"; };
+		E1437D221F35FA070066244B /* Rey-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rey-Bridging-Header.h"; sourceTree = "<group>"; };
+		E17BF41C1F35F14600EDB91E /* Rey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17BF41F1F35F14600EDB91E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E17BF4211F35F14600EDB91E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E17BF4241F35F14600EDB91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E17BF4261F35F14600EDB91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E17BF4291F35F14600EDB91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E17BF42B1F35F14600EDB91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E17BF4191F35F14600EDB91E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DF511222DC42120C2AC3B30 /* Pods_Rey.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48615695DF924C8385BBD25B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B863D81D480159122A58162C /* Pods-Rey.debug.xcconfig */,
+				0A698FD91B04230C66E20E52 /* Pods-Rey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C59577011203CEEA02376173 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B72D7E390FA8076F7BA09FC /* Pods_Rey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E17BF4131F35F14600EDB91E = {
+			isa = PBXGroup;
+			children = (
+				E17BF41E1F35F14600EDB91E /* Rey */,
+				E17BF41D1F35F14600EDB91E /* Products */,
+				48615695DF924C8385BBD25B /* Pods */,
+				C59577011203CEEA02376173 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E17BF41D1F35F14600EDB91E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E17BF41C1F35F14600EDB91E /* Rey.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E17BF41E1F35F14600EDB91E /* Rey */ = {
+			isa = PBXGroup;
+			children = (
+				E17BF41F1F35F14600EDB91E /* AppDelegate.swift */,
+				E17BF4211F35F14600EDB91E /* ViewController.swift */,
+				E17BF4231F35F14600EDB91E /* Main.storyboard */,
+				E17BF4261F35F14600EDB91E /* Assets.xcassets */,
+				E17BF4281F35F14600EDB91E /* LaunchScreen.storyboard */,
+				E17BF42B1F35F14600EDB91E /* Info.plist */,
+				E1437D221F35FA070066244B /* Rey-Bridging-Header.h */,
+			);
+			path = Rey;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E17BF41B1F35F14600EDB91E /* Rey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E17BF42E1F35F14600EDB91E /* Build configuration list for PBXNativeTarget "Rey" */;
+			buildPhases = (
+				38D7D25373070FF8707969A5 /* [CP] Check Pods Manifest.lock */,
+				E17BF4181F35F14600EDB91E /* Sources */,
+				E17BF4191F35F14600EDB91E /* Frameworks */,
+				E17BF41A1F35F14600EDB91E /* Resources */,
+				003E47C494CFE6AA00D6A261 /* [CP] Embed Pods Frameworks */,
+				F03B502942CBD2DFB84CA806 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rey;
+			productName = Rey;
+			productReference = E17BF41C1F35F14600EDB91E /* Rey.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E17BF4141F35F14600EDB91E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Conor O'Donnell";
+				TargetAttributes = {
+					E17BF41B1F35F14600EDB91E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 28WA7S2X4R;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E17BF4171F35F14600EDB91E /* Build configuration list for PBXProject "Rey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E17BF4131F35F14600EDB91E;
+			productRefGroup = E17BF41D1F35F14600EDB91E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E17BF41B1F35F14600EDB91E /* Rey */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E17BF41A1F35F14600EDB91E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17BF42A1F35F14600EDB91E /* LaunchScreen.storyboard in Resources */,
+				E17BF4271F35F14600EDB91E /* Assets.xcassets in Resources */,
+				E17BF4251F35F14600EDB91E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		003E47C494CFE6AA00D6A261 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rey/Pods-Rey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38D7D25373070FF8707969A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F03B502942CBD2DFB84CA806 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rey/Pods-Rey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E17BF4181F35F14600EDB91E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17BF4221F35F14600EDB91E /* ViewController.swift in Sources */,
+				E17BF4201F35F14600EDB91E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E17BF4231F35F14600EDB91E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E17BF4241F35F14600EDB91E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E17BF4281F35F14600EDB91E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E17BF4291F35F14600EDB91E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E17BF42C1F35F14600EDB91E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E17BF42D1F35F14600EDB91E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E17BF42F1F35F14600EDB91E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B863D81D480159122A58162C /* Pods-Rey.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 28WA7S2X4R;
+				INFOPLIST_FILE = Rey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ronocod.Rey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rey/Rey-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E17BF4301F35F14600EDB91E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A698FD91B04230C66E20E52 /* Pods-Rey.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 28WA7S2X4R;
+				INFOPLIST_FILE = Rey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ronocod.Rey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rey/Rey-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E17BF4171F35F14600EDB91E /* Build configuration list for PBXProject "Rey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17BF42C1F35F14600EDB91E /* Debug */,
+				E17BF42D1F35F14600EDB91E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E17BF42E1F35F14600EDB91E /* Build configuration list for PBXNativeTarget "Rey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17BF42F1F35F14600EDB91E /* Debug */,
+				E17BF4301F35F14600EDB91E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E17BF4141F35F14600EDB91E /* Project object */;
+}

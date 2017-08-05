@@ -21,7 +21,7 @@ if [ "$(uname)" = "Linux" ]; then
     echo "\nNot building iOS framework as we're on Linux 🐧"
 else
     echo "\nBuilding iOS framework "
-    gomobile bind -target ios -o build/ios/ReyCore.framework -ldflags="-s -w" $WORKING_DIR || exit 1
+    gomobile bind -target ios -o build/ios/Core.framework $WORKING_DIR || exit 1
 fi
 
 echo "\nDone!"

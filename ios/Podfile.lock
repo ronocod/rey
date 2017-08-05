@@ -1,0 +1,16 @@
+PODS:
+  - ReyCore (1.0)
+
+DEPENDENCIES:
+  - ReyCore (from `../core`)
+
+EXTERNAL SOURCES:
+  ReyCore:
+    :path: "../core"
+
+SPEC CHECKSUMS:
+  ReyCore: 5a23a5ccf383cad73a715d8617337279606b9a8b
+
+PODFILE CHECKSUM: bf2b4b4bcb1f8b20023a96370e7429dc28e49254
+
+COCOAPODS: 1.1.0
